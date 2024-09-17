@@ -1,0 +1,90 @@
+.appContentParagraph {
+    &Title {
+        margin-bottom: 24px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        position: relative;
+        cursor: pointer;
+    }
+
+    &Text {
+        color: $palePurple;
+        font-size: 16px;
+        line-height: 150%;
+        font-weight: 400;
+        margin-bottom: 24px;
+        opacity: 0;
+        animation: fadeIn ease-in 0.5s;
+        animation-fill-mode: forwards;
+
+        @media (max-width: 540px) {
+            font-size: 14px;
+            margin-bottom: 20px;
+        }
+    }
+
+    &Line {
+        width: 100%;
+        height: 1px;
+        color: $lightPink;
+        background-color: $lightPink;
+        margin-bottom: 24px;
+        border: none;
+
+        @media (max-width: 540px) {
+            margin-bottom: 20px;
+        }
+    }
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 0.5;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+.title {
+    font-weight: 600;
+    font-size: 18px;
+    color: $darkPurple;
+
+    @media (max-width: 540px) {
+        font-size: 16px;
+        margin-right: 24px;
+    }
+
+    &:hover {
+        color: $pink;
+    }
+
+    &Icon {
+        font-size: 30px;
+
+        &Plus {
+            color: $pink;
+        }
+
+        &Minus {
+            color: $darkPurple;
+            position: absolute;
+            right: 0;
+            display: none;
+
+            &.open {
+                display: block;
+                opacity: 0;
+                animation: fadeIn ease-in 0.5s;
+                animation-fill-mode: forwards;
+            }
+        }
+    }
+}
